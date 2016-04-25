@@ -24,5 +24,7 @@ namespace SumMvvm
         {
             InitializeComponent();
         }
+
+        public int MyProperty { get; set; }
     }
 }
