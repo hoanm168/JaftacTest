@@ -2,8 +2,9 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:SumMvvm"
+             xmlns:locator="clr-namespace:SumMvvm.VMLocator"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <locator:VMLocator x:Key="VMLocatorKey" />
     </Application.Resources>
 </Application>
