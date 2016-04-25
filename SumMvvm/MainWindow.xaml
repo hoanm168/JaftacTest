@@ -5,8 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SumMvvm"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        Title="Calculator" Height="350" Width="525">
+    <Grid Margin="20" DataContext="{Binding MainWindowViewModel,Source={StaticResource VMLocatorKey}}">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="X: " />
+        <TextBox Grid.Row="0" Grid.Column="1" Width="120" HorizontalContentAlignment="Right"
+                 Text="{Binding X,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+
+
+
+
+        <TextBlock Grid.Row="0" Grid.Column="2" Margin="20,0,0,0" Text="Y: " />
+        <TextBox Grid.Row="0" Grid.Column="3" Width="120" HorizontalContentAlignment="Right"
+                 Text="{Binding Y,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+
+        <Button Grid.Row="0" Grid.Column="5" Margin="20,0,0,0" Content="Calculate"
+                Command="{Binding SumCommand}"/>
+
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Sum(X, Y) : " />
+        <TextBox Grid.Row="2" Grid.Column="1"  Width="120" HorizontalContentAlignment="Right"
+                 Text="{Binding SumResult}" />
     </Grid>
 </Window>
